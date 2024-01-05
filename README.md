@@ -25,6 +25,16 @@ Useful Docs:
 [Exercise 1](resources/exercises/Excercise1.md)
 [Exercise 2](resources/exercises/Excercise2.md)
 
+## Lets talk Applications, Resilience and DevOps
+We've just scratched the surface of what you can do in K8s environments. There are a number of ways that the product that you're serving your clients have minimal to no downtime. we'll briefly go over the strategies to achieve just that.
+
+### 1. Redundancy 
+### 2. Self-healing
+### 3. Effective State Management
+### 4. Disaster Recovery
+### 5. Network Resilience
+### 6. Monitoring, Chaos Engineering and Self Healing
+### 7. A strong CI/CD pipeline
 
 ### Quiz
  [Click here](resources/quiz/troubleshooting.md)
