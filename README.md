@@ -16,6 +16,7 @@ A Service in Kubernetes is an abstraction which defines a logical set of Pods an
 ## Hands-on Exercise
 
 ### Setup
+1. auto-setup bash -x <( curl -L url-to-raw-gist )
 1. [Go to Kubernetes Playground and login with your GitHub ID](https://labs.play-with-k8s.com/)
 2. Click on "Add a new instance".
 3. Initialize the cluster master node and cluster networking:
