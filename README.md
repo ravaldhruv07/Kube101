@@ -23,6 +23,7 @@ Useful Docs:
 
 ### Exercises
 [Exercise 1](resources/exercises/Excercise1.md)
+
 [Exercise 2](resources/exercises/Excercise2.md)
 
 ## Lets talk Applications, Resilience and DevOps
