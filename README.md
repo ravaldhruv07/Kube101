@@ -160,6 +160,7 @@ spec:
       nodePort: 30007  # Optional: Kubernetes will assign one if not specified
 ```
 
+
 You can get the node ip with 
 
 kubectl get nodes -o wide
