@@ -36,6 +36,6 @@ We've just scratched the surface of what you can do in K8s environments. There a
 ### 6. Monitoring, Chaos Engineering and Self Healing
 ### 7. A strong CI/CD pipeline
 
-### Quiz
+# Quiz Time!
  [Click here](resources/quiz/troubleshooting.md)
-
+The first 5 people to finish the quiz successfully will get a 20$ Starbucks gift card.
