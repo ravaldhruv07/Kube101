@@ -1,147 +1,136 @@
-Kubernetes Hands-On Exercise
-Objective
+# Kubernetes Hands-On Exercise
 
+## Objective
 The purpose of this exercise is to gain hands-on experience in creating a simple ConfigMap, Pod, and a NodePort service in Kubernetes.
-Step 1: Create a ConfigMap
 
-    Create a ConfigMap YAML File
+### Step 1: Create a ConfigMap
 
-        Create a file called nginx-config.yaml with the following content:
+1. **Create a ConfigMap YAML File**
+   - Create a file called `nginx-config.yaml` with the following content:
 
-        yaml
+     ```yaml
+     apiVersion: v1
+     kind: ConfigMap
+     metadata:
+       name: nginx-config
+     data:
+       default.conf: |
+         server {
+             listen 80;
+             location / {
+                 return 200 'up';
+                 add_header Content-Type text/plain;
+             }
+         }
+     ```
 
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      name: nginx-config
-    data:
-      default.conf: |
-        server {
-            listen 80;
-            location / {
-                return 200 'up';
-                add_header Content-Type text/plain;
-            }
-        }
+2. **Apply the ConfigMap**
+   - Run the following command to apply the ConfigMap:
+     
+     ```bash
+     kubectl apply -f nginx-configmap.yaml
+     ```
 
-Apply the ConfigMap
+### Step 2: Create an Nginx Pod and Mount the ConfigMap as a Volume
 
-    Run the following command to apply the ConfigMap:
+1. **Create a Pod YAML File**
+   - Create the Nginx pod with the following definition:
 
-    bash
+     ```yaml
+     apiVersion: v1
+     kind: Pod
+     metadata:
+       name: nginx-pod
+     spec:
+       containers:
+       - name: nginx
+         image: nginx:latest
+         ports:
+         - containerPort: 80
+         volumeMounts:
+         - name: config-volume
+           mountPath: /etc/nginx/conf.d
+       volumes:
+       - name: config-volume
+         configMap:
+           name: nginx-config
+     ```
 
-        kubectl apply -f nginx-configmap.yaml
+2. **Apply the Pod YAML**
+   - Apply the configuration with:
 
-Step 2: Create an Nginx Pod and Mount the ConfigMap as a Volume
+     ```bash
+     kubectl apply -f nginx-pod.yaml
+     ```
 
-    Create a Pod YAML File
+### Step 3: Create a Service to Access the Pod
 
-        Create the Nginx pod with the following definition:
+1. **Create a Service YAML File**
+   - Define a NodePort service with the following YAML:
 
-        yaml
+     ```yaml
+     apiVersion: v1
+     kind: Service
+     metadata:
+       name: nginx-service
+     spec:
+       type: NodePort
+       selector:
+         run: nginx-pod
+       ports:
+       - protocol: TCP
+         port: 80
+     ```
 
-    apiVersion: v1
-    kind: Pod
-    metadata:
-      name: nginx-pod
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
-        volumeMounts:
-        - name: config-volume
-          mountPath: /etc/nginx/conf.d
-      volumes:
-      - name: config-volume
-        configMap:
-          name: nginx-config
+2. **Apply the Service**
+   - Apply the service configuration:
 
-Apply the Pod YAML
+     ```bash
+     kubectl apply -f nginx-service.yaml
+     ```
 
-    Apply the configuration with:
+### Step 4: Access the Application
 
-    bash
+1. **Find the Assigned NodePort**
+   - Retrieve the NodePort assigned to the service:
 
-        kubectl apply -f nginx-pod.yaml
+     ```bash
+     kubectl get svc nginx-service
+     ```
 
-Step 3: Create a Service to Access the Pod
+2. **Find the Internal IP of the Node**
+   - Get the internal IP of your node:
 
-    Create a Service YAML File
+     ```bash
+     kubectl get nodes -o wide
+     ```
 
-        Define a NodePort service with the following YAML:
+3. **Access the Service**
+   - Now, access the service using the node's IP and the assigned NodePort:
 
-        yaml
+     ```
+     http://[NodeIP]:[NodePort]/
+     ```
 
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: nginx-service
-    spec:
-      type: NodePort
-      selector:
-        run: nginx-pod
-      ports:
-      - protocol: TCP
-        port: 80
+     Replace `[NodeIP]` with your node's IP address and `[NodePort]` with the NodePort of your service.
 
-Apply the Service
+### Step 5: Deploy a New Version and Observe Downtime
 
-    Apply the service configuration:
+1. **Delete the Existing Pod**
+   - Simulate a service update by deleting the pod:
 
-    bash
+     ```bash
+     kubectl delete pod nginx-pod
+     ```
 
-        kubectl apply -f nginx-service.yaml
+     During this time, the service will be down and inaccessible.
 
-Step 4: Access the Application
+2. **Re-create the Pod**
+   - Recreate the pod with the same configuration:
 
-    Find the Assigned NodePort
+     ```bash
+     kubectl apply -f nginx-pod.yaml
+     ```
 
-        Retrieve the NodePort assigned to the service:
-
-        bash
-
-    kubectl get svc nginx-service
-
-Find the Internal IP of the Node
-
-    Get the internal IP of your node:
-
-    bash
-
-    kubectl get nodes -o wide
-
-Access the Service
-
-    Now, access the service using the node's IP and the assigned NodePort:
-
-    arduino
-
-        http://[NodeIP]:[NodePort]/
-
-        Replace [NodeIP] with your node's IP address and [NodePort] with the NodePort of your service.
-
-Step 5: Deploy a New Version and Observe Downtime
-
-    Delete the Existing Pod
-
-        Simulate a service update by deleting the pod:
-
-        bash
-
-    kubectl delete pod nginx-pod
-
-    During this time, the service will be down and inaccessible.
-
-Re-create the Pod
-
-    Recreate the pod with the same configuration:
-
-    bash
-
-    kubectl apply -f nginx-pod.yaml
-
-Observe the Downtime
-
-    Notice the downtime period between deletion and recreation of the pod.
+3. **Observe the Downtime**
+   - Notice the downtime period between deletion and recreation of the pod.
