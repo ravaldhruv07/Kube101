@@ -1,71 +1,102 @@
-Purpose: Make your application more resilient.
+# Making Your Application More Resilient in Kubernetes
 
-This tutorial will guide you through creating a Kubernetes deployment with an Nginx server configured to return a custom message. We'll also demonstrate how Kubernetes deployments can be updated with zero downtime.
+## Objective
+Lets learn how to deploy an application with no downtime.
 
-Pre-requisite: you have completed exercise 1. If you had issues completing the exercise, run this command to catch up to this point so that you can follow along from here:
+## Prerequisites
+
+- Ensure that you have completed Exercise 1. If you ran into any issues during the previous exercise, you can catch upto this point with this command:
+
+  # [Include the catch-up command here]
 
 
 
 
-Step 2: Lets create an nginx deployment object
 
-Create a file called nginx-deployent.yaml with the following content:
+## Kubernetes Nginx Deployment Tutorial
+
+
+### Step 1: Create an Nginx Deployment Object
+
+
+1. **Create a file** called `nginx-deployment.yaml`:
+
+ ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: nginx-deployment
+   spec:
+     replicas: 1
+     selector:
+       matchLabels:
+         app: nginx
+     template:
+       metadata:
+         labels:
+           app: nginx
+       spec:
+         containers:
+         - name: nginx
+           image: nginx:latest
+           ports:
+           - containerPort: 80
+           volumeMounts:
+           - name: config-volume
+             mountPath: /etc/nginx/conf.d
+         volumes:
+         - name: config-volume
+           configMap:
+             name: nginx-config
 ```
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: nginx-deployment
-    spec:
-      replicas: 1
-      selector:
-        matchLabels:
-          app: nginx
-      template:
-        metadata:
-          labels:
-            app: nginx
-        spec:
-          containers:
-          - name: nginx
-            image: nginx:latest
-            ports:
-            - containerPort: 80
-            volumeMounts:
-            - name: config-volume
-              mountPath: /etc/nginx/conf.d
-          volumes:
-          - name: config-volume
-            configMap:
-              name: nginx-config
-```
-now lets apply the yaml file we created.
+  2. apply the YAML file we just created:
 
-        kubectl apply -f nginx-deployment.yaml
+  ```  kubectl apply -f nginx-deployment.yaml ```
+  3. familiarize yourself with the deployment and the pods that we created with it
+  ```k get deployments```
+  ```k get deployment nginx-deployment```
+  ```k get pods -o wide```
+  ```k logs [podName]```
+
+Step 2: Access the app through our NodePort service.
+
+Now, let's try accessing the Nginx service:
+
+1. find out the internal ip of your node
+2. find out the port that Kuberenetes assigned to your service
+3. curl http://[NodeIP]:[Port]/
+4. Check the pod logs, you should be able to see the traffic you're generating to your application.
+    
+
+Step 3: Update the Application
+
+1. Lets update our running application with a new image version.
+
+```kubectl set image deployment/nginx-deployment nginx=nginx:1.19.0 --record```
+
+2. curl http://[NodeIP]:[Port]/ to see if you notice any downtime
+3. You can also monitor the rollout status with:
+```k rollout status deployment/nginx-deployment```
 
 
-So far, we have a config map and a NodePort service that looks for pods with the label `app: nginx`
+Step 4: Lets roll back a version
+
+1. Lets update our running application with a new image version.
+
+```kubectl set image deployment/nginx-deployment nginx=nginx:1.19.0 --record```
+
+2. curl http://[NodeIP]:[Port]/ to see if you notice any downtime
+3. You can also monitor the rollout status with:
+```k rollout status deployment/nginx-deployment```
+Monitor the Rollout Status:
+
+Observe the update process and watch for any downtime:
+
+bash
+
+    kubectl rollout status deployment/nginx-deployment
+
+    Try accessing the application during this process to check for downtime.
 
 
-Lets try accessing the service
-
-
-Step 4: Access the Nginx Service
-
-http://[NodeIP]:30007/
-
-Replace [NodeIP] with your node's external IP address.
-
-We will now check the pod logs to see which pods are receiving traffic.
-
-Step 5: How do we push an update to our app?
-
-    k set image deployment/nginx-deployment nginx=nginx:1.19.0 --record
-
-Monitor the Rollout Status
-
-    Lets hit the app now and see if we notice any downtime:
-we can also view the rollout status here:
-        kubectl rollout status deployment/nginx-deployment
-
-Congratulations! you've just deployed your workload on Kubernetes with 0 downtime. 
-
+Congratulations! You've successfully deployed and updated your Nginx workload on Kubernetes with zero downtime (and learnt how to quickly rollback a version in case of any issues).
