@@ -1,4 +1,9 @@
-# CUSEC - Learn Kubernetes with Me!
+## kube 101: Run your workloads on K8s!
+
+Come and learn how you can use kubernetes to run your workloads! You will learn the foundations of kubernetes i.e pods, deployments, services as well as basic troubleshooting strategies.
+
+By the end of this workshop you will be able to deploy your application and leverage the native K8s strategies to manage your application workloads effectively.
+
 
 ## What is Kubernetes (K8s)?
 Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services. It facilitates both declarative configuration and automation and has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available.
