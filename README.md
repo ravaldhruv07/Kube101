@@ -98,4 +98,75 @@ subjects:
   namespace: kube-system
 ```
 
+creating an nginx deployment
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+data:
+  default.conf: |
+    server {
+        listen 80;
+        location / {
+            return 200 'up';
+            add_header Content-Type text/plain;
+        }
+    }
+
 ---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/nginx/conf.d
+      volumes:
+      - name: config-volume
+        configMap:
+          name: nginx-config
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: NodePort
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      nodePort: 30007  # Optional: Kubernetes will assign one if not specified
+```
+
+You can get the node ip with 
+
+kubectl get nodes -o wide
+k describe service nginx-services
+
+use curl curl http://internalIp:nodePort
+
+---
+
+
+
