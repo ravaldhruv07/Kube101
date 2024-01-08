@@ -5,14 +5,13 @@ Come and learn how you can use kubernetes to run your workloads! You will learn 
 By the end of this workshop you will be able to deploy your application and leverage the native K8s strategies to manage your application workloads effectively.
 
 
-## What is Kubernetes (K8s)?
-Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services. It facilitates both declarative configuration and automation and has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available.
-
-## What is a Pod?
-Pods are the smallest deployable units of computing that can be created and managed in Kubernetes. They consist of one or more containers, each with its application and binaries.
-
-## What is a Service?
-A Service in Kubernetes is an abstraction which defines a logical set of Pods and a policy by which to access them.
+## Lets talk Kubernetes or K8s
+1. Nodes
+2. Namespaces
+3. Pods
+4. Config Maps and Secrets
+5. PVC
+6. Deployments and Replicasets
 
 
 ### Setup
