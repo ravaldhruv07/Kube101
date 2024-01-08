@@ -11,7 +11,6 @@ kubectl get nodes -o name | sed 's|^node/||' | xargs -I {} kubectl taint nodes {
 
 yum install bash-completion
 kubectl completion bash | tee /etc/bash_completion.d/kubectl > /dev/null
-echo "alias k='kubectl'" >> ~/.bashrc
 echo 'complete -o default -F __start_kubectl k' >>~/.bashrc
 
 echo "all done!"
