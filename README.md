@@ -19,12 +19,12 @@ A Service in Kubernetes is an abstraction which defines a logical set of Pods an
 1. Go to [Play with K8s](https://labs.play-with-k8s.com/) and login with your github credentials
 temporary:  
 ```bash
-   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh)
+   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) & alias k='kubectl'
   ```
 3. Click on "Add a new instance"
 4. Run this command to auto setup your environment:
  ```bash
-   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh)
+   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) && alias k='kubectl'
   ```
 Useful Docs:
 1. [Kubectl cheat sheet](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
