@@ -46,5 +46,14 @@ We've just scratched the surface of what you can do in K8s environments. There a
 ### 7. A strong CI/CD pipeline
 
 # Quiz Time!
- [Click here](resources/quiz/troubleshooting.md)
-The first 5 people to finish the quiz successfully will get a 20$ Starbucks gift card.
+ ## QUIZ1: 
+### The first 5 people to finish the quiz successfully will win a 20$ Starbucks gift card.
+```bash
+   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) && bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/quiz1.sh) && alias k='kubectl'
+  ```
+
+ ## QUIZ2: 
+### There is no prize for this quiz however I believe trying to solve this could be a great learning opportunity. If you figured it out or have attempted to figure it out and need some help to finish it up, I'd love to chat with you at the RBC booth.
+```bash
+   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) && bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/quiz1.sh) && alias k='kubectl'
+  ```
