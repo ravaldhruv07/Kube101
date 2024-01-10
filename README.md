@@ -11,7 +11,7 @@ By the end of this workshop you will be able to deploy your application and leve
 3. Pods
 4. Config Maps and Secrets
 5. PVC
-6. Deployments and Replicasets
+6. Deployments and Replicas
 
 
 ### Setup
