@@ -1,7 +1,7 @@
 # Making Your Application More Resilient in Kubernetes
 
 ## Objective
-Lets learn how to deploy an application with no downtime.
+Lets learn how to deploy your application and leverage replicas with Kubernetes deployments.
 
 ## Prerequisites
 
