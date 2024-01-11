@@ -13,7 +13,7 @@
 4. There's a quiz1.yml file on your terminal. You can view its contents with ``` cat quiz2.yml ```
 5. You can run the command ```k apply -f quiz2.yml ``` to attempt scheduling your pod/application.
 6. Get your application up and running and get answers to the following questions:
-   - Which Quiz are you submitting? **(Answer: Quiz1)**
+   - Which Quiz are you submitting? **(Answer: Quiz2)**
    - Describe what was wrong with the deployment? What commands did you run to debug?
    - Why did the yaml spin up 2 pods instead of 1?
    - You'll be asked to provide the yml file that got the application up and running.
