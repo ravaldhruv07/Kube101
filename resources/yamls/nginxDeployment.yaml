@@ -54,4 +54,4 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      nodePort: 30007  # Optional: Kubernetes will assign one if not specified
+      nodePort: 32123  # Optional: K8s will automatically assign you one if this field is not specified.
