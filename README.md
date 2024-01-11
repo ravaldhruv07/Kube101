@@ -36,4 +36,5 @@ Useful Docs:
 
  ## QUIZ2: 
 There is no prize for this quiz however I believe trying to solve this could be a great learning opportunity. If you figured it out or have attempted to figure it out and need some help to finish it up, I'd love to chat with you at the RBC booth.
+
 [Quiz 2](resources/quiz/quiz2.md)
