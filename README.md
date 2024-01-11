@@ -6,12 +6,10 @@ By the end of this workshop you will be able to deploy your application and leve
 
 
 ## Lets talk Kubernetes or K8s
-1. Nodes
-2. Namespaces
-3. Pods
-4. Config Maps and Secrets
-5. PVC
-6. Deployments and Replicas
+1. Namespaces ``` k get namespaces ```
+2. Pods ```k get pods ```
+3. Services ``` k get services ```
+3. Deployments and Replicas ```k get deployments ```
 
 
 ### Setup
