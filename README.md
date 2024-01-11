@@ -33,10 +33,16 @@ Useful Docs:
 
 [Exercise 2](resources/exercises/Exercise2.md)
 
+
+
 # Quiz Time!
  ## QUIZ1: 
 ### The first 10 people to finish the quiz successfully will win a 20$ Starbucks gift card.
 [Quiz 1](resources/quiz/quiz1.md)
+
+<div align="right">
+<img src="https://cdn.freebiesupply.com/images/large/2x/starbucks-logo-png-transparent.png" alt="sbucks Logo" width="200" height="200">
+</div>
 
  ## QUIZ2: 
 There is no prize for this quiz however I believe trying to solve this could be a great learning opportunity. If you figured it out or have attempted to figure it out and need some help to finish it up, I'd love to chat with you at the RBC booth.
