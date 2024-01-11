@@ -27,11 +27,15 @@ k expose pod nginx --type=NodePort --port=80
 
  ```bash
 k get nodes -o wide
+  ```
+```bash
 k get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}'
   ```
  And now, lets figure out the port for the NodePort service.
  ```bash
 k get svc
+  ```
+```bash
 k get svc nginx -o=jsonpath='{.spec.ports[0].nodePort}'
   ```
 Now lets run this command with the values you found.
