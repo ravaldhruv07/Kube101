@@ -17,7 +17,7 @@ By the end of this workshop you will be able to deploy your application and leve
 2. Click on "Add a new instance" twice to create 2 new instances.
 3. Run this command on both instances to auto setup your environment:
  ```bash
-   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) && source <(kubectl completion bash) && alias k=kubectl && complete -F __start_kubectl k'
+   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) && source <(kubectl completion bash) && alias k=kubectl && complete -F __start_kubectl k
   ```
 Useful Docs:
 1. [Kubectl cheat sheet](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
