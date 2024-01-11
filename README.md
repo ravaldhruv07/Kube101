@@ -24,7 +24,7 @@ By the end of this workshop you will be able to deploy your application and leve
 Useful Docs:
 1. [Kubectl cheat sheet](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
 2. [K8s Concepts](https://kubernetes.io/docs/concepts/)
-3. [Illustrated Guide to Kubernetes](https://www.cncf.io/phippy/the-childrens-illustrated-guide-to-kubernetes/)
+3. [An Illustrated Guide to Kubernetes](https://www.cncf.io/phippy/the-childrens-illustrated-guide-to-kubernetes/)
 
 ### Exercises
 [Exercise 1](resources/exercises/Exercise1.md)
