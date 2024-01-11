@@ -39,7 +39,7 @@ k get svc
 k get svc nginx -o=jsonpath='{.spec.ports[0].nodePort}'
   ```
 Now lets run this command with the values you found.
-curl http://<node-ip>:<node-port>
+curl http://[node-internal-ip]:[node-port]
 
 If you have difficulties creating the curl command or want to double check it. you can run the following script which will show you the curl command that you need to run to access the application
 
