@@ -76,7 +76,7 @@ spec:
  #### 2. apply the YAML file we just went through:
 
   ```bash
-  k apply -f https://raw.githubusercontent.com/ravaldhruv07/Kube101/addModifications/resources/yamls/nginxDeployment.yaml
+  k apply -f https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/yamls/nginxDeployment.yaml
   ```
   #### 3. familiarize yourself with the deployment and the pods that we created with it
   ```bash
