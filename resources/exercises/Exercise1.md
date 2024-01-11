@@ -12,9 +12,6 @@ The purpose of this exercise is to gain hands-on experience in creating a simple
 
 ```bash
 k run nginx --image=nginx
-k expose pod nginx --type=NodePort --port=80
-k get svc
-k get nodes -o wide
  ```
  
 
@@ -22,8 +19,6 @@ k get nodes -o wide
 
   ```bash
 k expose pod nginx --type=NodePort --port=80
-k get svc
-k get nodes -o wide
   ```
 
 ### Step 3: Lets figure out how to access our application
