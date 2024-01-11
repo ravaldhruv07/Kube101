@@ -4,7 +4,7 @@
 
 ## Objective
 
-The purpose of this exercise is to gain hands-on experience in creating a simple ConfigMap, Pod, and a NodePort service in Kubernetes.
+The purpose of this exercise is to gain hands-on experience in creating a simple Pod and a NodePort service to schedule your workload in Kubernetes.
  
 
 ### Step 1: Create an Nginx Pod
