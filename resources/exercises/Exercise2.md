@@ -2,10 +2,11 @@
 # Making Your Application More Resilient in Kubernetes
 
 ## Objective
-Lets learn how to deploy your application and leverage replicas with Kubernetes deployments.
+Lets learn how to deploy your application through a yaml file and leverage replicas with Kubernetes deployments.
+
+### Pre-requisite: Make sure you're using the second instance that you've created during the initial setup.
 
 ## Kubernetes Nginx Deployment Tutorial
-
 
 ### Step 1: Create an Nginx Deployment Object
 
@@ -116,25 +117,4 @@ k rollout status deployment/nginx-deployment
 ```
 
 
-### Step 4: Lets roll back a version
-
-#### 1. Lets update our running application with a new image version.
-
-```bash 
-kubectl set image deployment/nginx-deployment nginx=nginx:1.19.0 --record
-```
-
-#### 2. curl http://[NodeIP]:[Port]/ to see if you notice any downtime
-#### 3. You can also monitor the rollout status with:
-```bash
-k rollout status deployment/nginx-deployment
-```
-#### 4. Monitor the Rollout Status:
-
-```bash
-  kubectl rollout status deployment/nginx-deployment
-```
-  Try accessing the application during this process to check for downtime.
-
-
-#### Congratulations! You've successfully deployed and updated your Nginx workload on Kubernetes with zero downtime (and learnt how to quickly rollback a version in case of any issues).
+#### Congratulations! You've successfully deployed and updated your application workload on Kubernetes with zero downtime.
