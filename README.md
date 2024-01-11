@@ -20,8 +20,8 @@ temporary:
 ```bash
    bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/addModifications/resources/scripts/setup.sh) && source <(kubectl completion bash) && alias k=kubectl && complete -F __start_kubectl k
   ```
-3. Click on "Add a new instance"
-4. Run this command to auto setup your environment:
+3. Click on "Add a new instance" twice to create 2 new instances.
+4. Run this command on both instances to auto setup your environment:
  ```bash
    bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) && alias k='kubectl'
   ```
