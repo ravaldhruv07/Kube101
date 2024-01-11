@@ -31,13 +31,9 @@ Useful Docs:
 
 # Quiz Time!
  ## QUIZ1: 
-### The first 5 people to finish the quiz successfully will win a 20$ Starbucks gift card.
-```bash
-   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) && bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/quiz1.sh) && alias k='kubectl'
-  ```
+### The first 10 people to finish the quiz successfully will win a 20$ Starbucks gift card.
+[Quiz 1](resources/quiz/quiz1.md)
 
  ## QUIZ2: 
-### There is no prize for this quiz however I believe trying to solve this could be a great learning opportunity. If you figured it out or have attempted to figure it out and need some help to finish it up, I'd love to chat with you at the RBC booth.
-```bash
-   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) && bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/quiz1.sh) && alias k='kubectl'
-  ```
+There is no prize for this quiz however I believe trying to solve this could be a great learning opportunity. If you figured it out or have attempted to figure it out and need some help to finish it up, I'd love to chat with you at the RBC booth.
+[Quiz 2](resources/quiz/quiz2.md)
