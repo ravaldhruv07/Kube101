@@ -57,7 +57,7 @@ for ip in $(kubectl get nodes -o=jsonpath='{.items[*].status.addresses[?(@.type=
 
      ```bash
 
-     k delete pod
+     k delete pod nginx
 
      ```
 
