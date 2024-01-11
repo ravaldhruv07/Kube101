@@ -16,7 +16,7 @@ _Can you apply your strong problem-solving skills and kubernetes knowhow to ensu
 2. Click on "Add a new instance".
 3. Run this command to auto setup the quiz:
  ```bash
-   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) &&  bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv/quizHost/main/quiz1.sh) && alias k=kubectl
+   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) &&  bash -x <( curl -L https://raw.githubusercontent.com/{tbd}/quizHost/main/quiz1.sh) && alias k=kubectl
   ```
 4. There's a quiz1.yml file on your terminal. You can view its contents with ``` cat quiz1.yml ```
 5. You can run the command ```k apply -f quiz1.yml ``` to attempt scheduling your pod/application.
