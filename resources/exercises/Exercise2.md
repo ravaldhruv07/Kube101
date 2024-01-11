@@ -89,18 +89,16 @@ spec:
   k get pods -o wide
   ```
   ```bash
-  bash k logs [podName]
+  k logs [podName]
   ```
 
 ### Step 2: Access the app through our NodePort service.
 
-Now, let's try accessing the Nginx service:
-
-#### 1. find out the internal ip of your node
-#### 2. find out the port that Kuberenetes assigned to your service (hint )
-#### 3. curl http://[NodeIP]:[Port]/
-#### 4. Check the pod logs, you should be able to see the traffic you're generating to your application.
+Run the following command to find out the curl command to access your service:
     
+  ```bash
+  for ip in $(kubectl get nodes -o=jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}'); do port=$(kubectl get svc nginx-service -o=jsonpath='{.spec.ports[0].nodePort}'); echo "curl http://$ip:$port"; done
+  ```
 
 ### Step 3: Update the Application
 
