@@ -26,7 +26,7 @@ k get svc
 k get nodes -o wide
   ```
 
-### Step 2: Lets figure out how to access our application
+### Step 3: Lets figure out how to access our application
 
  Lets grab the internal ip of the node, you'll need it at a later step.
 
@@ -48,7 +48,7 @@ If you have difficulties creating the curl command or want to double check it. y
 for ip in $(kubectl get nodes -o=jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}'); do port=$(kubectl get svc nginx -o=jsonpath='{.spec.ports[0].nodePort}'); echo "curl http://$ip:$port"; done
 ```
 
-### Step 5: Deploy a New Version and Observe Downtime
+### Step 4: Deploy a New Version
 
  
 
