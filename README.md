@@ -5,22 +5,21 @@ Come and learn how you can use kubernetes to run your workloads! You will learn 
 By the end of this workshop you will be able to deploy your application and leverage the native K8s strategies to manage your application workloads effectively.
 
 
-## What is Kubernetes (K8s)?
-Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services. It facilitates both declarative configuration and automation and has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available.
-
-## What is a Pod?
-Pods are the smallest deployable units of computing that can be created and managed in Kubernetes. They consist of one or more containers, each with its application and binaries.
-
-## What is a Service?
-A Service in Kubernetes is an abstraction which defines a logical set of Pods and a policy by which to access them.
+## Lets talk Kubernetes or K8s
+1. Nodes
+2. Namespaces
+3. Pods
+4. Config Maps and Secrets
+5. PVC
+6. Deployments and Replicas
 
 
 ### Setup
 1. Go to [Play with K8s](https://labs.play-with-k8s.com/) and login with your github credentials
-2. Click on "Add a new instance"
-3. Run this command to auto setup your environment:
+2. Click on "Add a new instance" twice to create 2 new instances.
+3. Run this command on both instances to auto setup your environment:
  ```bash
-   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh)
+   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) && source <(kubectl completion bash) && alias k=kubectl && complete -F __start_kubectl k'
   ```
 Useful Docs:
 1. [Kubectl cheat sheet](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
@@ -43,5 +42,14 @@ We've just scratched the surface of what you can do in K8s environments. There a
 ### 7. A strong CI/CD pipeline
 
 # Quiz Time!
- [Click here](resources/quiz/troubleshooting.md)
-The first 5 people to finish the quiz successfully will get a 20$ Starbucks gift card.
+ ## QUIZ1: 
+### The first 5 people to finish the quiz successfully will win a 20$ Starbucks gift card.
+```bash
+   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) && bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/quiz1.sh) && alias k='kubectl'
+  ```
+
+ ## QUIZ2: 
+### There is no prize for this quiz however I believe trying to solve this could be a great learning opportunity. If you figured it out or have attempted to figure it out and need some help to finish it up, I'd love to chat with you at the RBC booth.
+```bash
+   bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/setup.sh) && bash -x <( curl -L https://raw.githubusercontent.com/ravaldhruv07/Kube101/main/resources/scripts/quiz1.sh) && alias k='kubectl'
+  ```
