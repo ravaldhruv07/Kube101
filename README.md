@@ -1,4 +1,8 @@
-## kube 101: Run your workloads on K8s!
+<div align="center">
+<img src="https://landscape.cncf.io/logos/kubernetes.svg" alt="k8s Logo" width="300" height="200">
+</div>
+
+## kube 101: Run your workloads on K8s! 
 
 Come and learn how you can use kubernetes to run your workloads! You will learn the foundations of kubernetes i.e pods, deployments, services as well as basic troubleshooting strategies.
 
