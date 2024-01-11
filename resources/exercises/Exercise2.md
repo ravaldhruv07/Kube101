@@ -105,14 +105,10 @@ Run the following command to find out the curl command to access your service:
 #### 1. Lets update our running application with a new image version.
 
 ```bash
-kubectl set image deployment/nginx-deployment nginx=nginx:1.19.0 --record
+kubectl set image deployment/nginx-deployment nginx=nginx:1.19.0 && watch kubectl get pods
 ```
 
 #### 2. curl http://[NodeIP]:[Port]/ to see if you notice any downtime
-#### 3. You can also monitor the rollout status with:
-```bash 
-k rollout status deployment/nginx-deployment
-```
 
 
 #### Congratulations! You've successfully deployed and updated your application workload on Kubernetes with zero downtime.
