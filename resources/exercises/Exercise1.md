@@ -85,6 +85,8 @@ for ip in $(kubectl get nodes -o=jsonpath='{.items[*].status.addresses[?(@.type=
      ```
 
  4. Run the curl command again to see what happens.
+ 5. Take a few minutes to interact with your kubernetes environment.
+
 
 
  
