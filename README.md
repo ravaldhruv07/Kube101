@@ -7,7 +7,9 @@
 Come and learn how you can use kubernetes to run your workloads! You will learn the foundations of kubernetes i.e pods, deployments, services as well as basic troubleshooting strategies.
 
 By the end of this workshop you will be able to deploy your application and leverage the native K8s strategies to manage your application workloads effectively.
-
+### pre requisites
+1. personal laptop
+2. github account
 
 ## Lets talk Kubernetes or K8s
 1. Namespaces ``` k get namespaces ```
