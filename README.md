@@ -49,4 +49,4 @@ There is no prize for this quiz however I believe trying to solve this could be 
 
 [Quiz 2](resources/quiz/quiz2.md)
 
- ### [add me on LinkedIn](www.linkedin.com/in/dhruvraval)
+ ### [Add me on LinkedIn](https://www.linkedin.com/in/dhruvraval)
